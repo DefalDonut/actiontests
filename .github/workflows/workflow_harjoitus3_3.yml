@@ -11,8 +11,8 @@ jobs:
       - uses: actions/checkout@v7
       - name: Print opened issue info
         run: |
-          echo "Assignee: ${{github.event.issue.assignee}}"
-          echo "Title: ${{github.event.issue.title}}"
+          printf "<br>`Assignee: ${{github.event.issue.assignee.login}}`" >> README.md
+          printf "<br>`Title: ${{github.event.issue.title}}`" >> README.md
       - name: Push into git
         run: |
           git config --global user.name 'DefalDonut'
