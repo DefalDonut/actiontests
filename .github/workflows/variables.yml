@@ -1,5 +1,5 @@
 name: Variables
-on: push
+on: workflow_dispatch
 env:
   MY_NAME: Toni Säily
   URL: ${{vars.MY_SERVER_URL}}
