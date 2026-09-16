@@ -1,1 +1,19 @@
-
+name: Harjoitus3_osa3
+on:
+  issues:
+    types: opened
+permissions: 
+  contents: write
+jobs:
+  harjoitus3_osa3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Print opened issue info
+        run:  |
+          echo Assignee: $"(github.event.issue.assignee)"
+          echo Title: $"(github.event.issue.title)"
+      -  name: Push into git
+      - run: |
+          git config --global user.name 'repenaattori'
+          git config --global user.email 'reimarii@oamk.fi'
