@@ -2,13 +2,15 @@ name: Push harjoitus
 on: push
 permissions: 
   contents: write
+env:
+  KEYWORD: Toninlogi
 jobs:
   harjoitus3_osa2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - run: |
-          printf "Push implemented\n" >> log.txt
+          printf "$KEYWORD: Push implemented\n" >> log.txt
           git config --global user.name 'DefalDonut'
           git config --global user.email 'tsaily@students.oamk.fi'
           git add .
