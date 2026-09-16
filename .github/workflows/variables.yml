@@ -1,7 +1,7 @@
 name: Variables
 on: push
 env:
-  MY_NAME: Reima Riihimäki
+  MY_NAME: Toni Säily
   URL: ${{vars.MY_SERVER_URL}}
 jobs:
   repo-test:
