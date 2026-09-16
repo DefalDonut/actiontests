@@ -1,1 +1,16 @@
-
+name: Push harjoitus
+on: push
+permissions: 
+  contents: write
+jobs:
+  harjoitus3_osa2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          prinf "Push implemented\n" >> log.txt
+          git config --global user.name 'DefalDonut'
+          git config --global user.email 'tsaily@students.oamk.fi'
+          git add .
+          git commit -m 'New push info'
+          git push
