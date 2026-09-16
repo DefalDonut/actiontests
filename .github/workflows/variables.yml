@@ -12,3 +12,4 @@ jobs:
           echo "Password on ${{secrets.MY_PW}}"
           echo "Trigger branch is ${{github.repository}}"
       - run: echo "My info is ${{github.event.head_commit.author.username}}"
+      - run: echo "${{toJson(github.event.head_commit)}}"
