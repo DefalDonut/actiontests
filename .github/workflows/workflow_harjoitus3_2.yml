@@ -11,6 +11,9 @@ jobs:
       - uses: actions/checkout@v7
       - run: |
           printf "$KEYWORD: Push implemented\n" >> log.txt
+          COUNT=$(cat counter.txt)
+          COUNT=$(COUNT+1)
+          echo "$COUNT >> counter.txt"
           git config --global user.name 'DefalDonut'
           git config --global user.email 'tsaily@students.oamk.fi'
           git add .
