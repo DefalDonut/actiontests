@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: |
-          prinf "Push implemented\n" >> log.txt
+          printf "Push implemented\n" >> log.txt
           git config --global user.name 'DefalDonut'
           git config --global user.email 'tsaily@students.oamk.fi'
           git add .
