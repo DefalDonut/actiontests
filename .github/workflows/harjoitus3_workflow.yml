@@ -7,4 +7,4 @@ jobs:
   sentence-job:
     runs-on: ubuntu-latest
     steps: 
-        -  run: echo "Your app name is $APP_NAME and version is $APP_VERSION
+        -  run: echo "Your app name is $APP_NAME and version is $APP_VERSION"
