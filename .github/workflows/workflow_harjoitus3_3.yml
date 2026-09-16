@@ -13,7 +13,7 @@ jobs:
         run:  |
           echo Assignee: $"(github.event.issue.assignee)"
           echo Title: $"(github.event.issue.title)"
-      -  name: Push into git
+      - name: Push into git
       - run: |
           git config --global user.name 'repenaattori'
           git config --global user.email 'reimarii@oamk.fi'
