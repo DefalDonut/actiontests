@@ -13,7 +13,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v7
-        - name: etunimi
+        - name: Etunimi
           run: |
             echo "Toni"
   last_name:
@@ -21,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: sukunimi
+      - name: Sukunimi
         run: |
           echo "Säily"
