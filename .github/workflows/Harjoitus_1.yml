@@ -1,1 +1,26 @@
-
+name: Harjoitus_1
+on: workflow_dispatch
+jobs:
+  age:
+    needs: last_name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Ikä
+        run: |
+          echo "26"
+  first_name:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v7
+        - name: etunimi
+          run: |
+            echo "Toni"
+  last_name:
+    needs: first_name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: sukunimi
+        run: |
+          echo "Säily"
