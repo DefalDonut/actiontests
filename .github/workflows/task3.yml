@@ -1,1 +1,19 @@
-
+name: Tehtävä 1
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.63.0-noble
+    steps:
+      - uses: actions/checkout@v7
+      - name: First step
+        run: |
+          npm ci
+          npm test -- test1 > testi1.txt || true
+      - name: Second step
+        run: npm test -- test2 > testi2.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          path: ./*.md
