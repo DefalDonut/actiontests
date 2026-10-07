@@ -25,3 +25,6 @@ jobs:
           git add test1.txt testi2.txt
           git commit -m "File created" || true
           git push
+      - name: Failure
+        if: failure()
+        run: echo "Testit epäonnistuivat"
