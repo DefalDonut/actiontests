@@ -1,5 +1,7 @@
 name: Testi
 on: workflow_dispatch
+permissions:
+  contents: write
 
 jobs:
   testing:
