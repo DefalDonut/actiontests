@@ -22,6 +22,6 @@ jobs:
         run: |
           git config --global user.name 'DefalDonut'
           git config --global user.email 'tsaily24@students.oamk.fi'
-          git add .
+          git add test1.txt testi2.txt
           git commit -m "File created" || true
           git push
