@@ -1,0 +1,28 @@
+name: Tehtävä 1
+on: workflow_dispatch
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    container: 
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+    steps:
+      - name: First step
+        id: first
+        run: |
+          npm ci
+          npm test -- test1 >> test1.txt || true
+      - name: Second step
+        id: second
+        run: |
+          npm test -- test2 >> testi2.txt
+      - name: Push into git
+        id: push
+        run: |
+          git config --global user.name 'DefalDonut'
+          git config --global user.email 'tsaily24@students.oamk.fi'
+          git add .
+          git commit -m "File created"
+          git push
+      - name: tests failed
+        if: steps.first.outcome == 'failure' || steps.second.outcome == 'failure' || steps.push.outcome == 'failure'
+        run: echo "Testit epäonnistuivat"
