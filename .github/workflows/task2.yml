@@ -1,5 +1,5 @@
 name: Tehtävä 2
-on: push
+on: workflow_dispatch
 
 jobs:
   branching:
