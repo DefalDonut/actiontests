@@ -11,9 +11,10 @@ jobs:
       - name: First step
         run: |
           npm ci
-          npm test -- test1 > testi1.txt || true
+          npm test -- test1 > testi1.md || true
       - name: Second step
-        run: npm test -- test2 > testi2.txt
+        run: npm test -- test2 > testi2.md
       - uses: actions/upload-artifact@v7
+        if: failure()
         with:
           path: ./*.md
