@@ -25,6 +25,3 @@ jobs:
           git add .
           git commit -m "File created" || true
           git push
-      - name: tests failed
-        continue-on-error: true
-        run: echo "Testit epäonnistuivat"
