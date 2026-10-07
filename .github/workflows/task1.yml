@@ -3,8 +3,7 @@ on: workflow_dispatch
 jobs:
   container-job:
     runs-on: ubuntu-latest
-    container: 
-      image: mcr.microsoft.com/playwright:v1.63.0-noble
+    container: mcr.microsoft.com/playwright:v1.63.0-noble
     steps:
       - name: First step
         id: first
