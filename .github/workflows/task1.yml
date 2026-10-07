@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container: mcr.microsoft.com/playwright:v1.63.0-noble
     steps:
+      - uses: actions/checkout@v7
       - name: First step
         id: first
         run: |
