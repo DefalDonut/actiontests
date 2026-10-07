@@ -9,21 +9,18 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: First step
-        id: first
         run: |
           npm ci
           npm test -- test1 > testi1.txt || true
       - name: Second step
-        id: second
         run: npm test -- test2 > testi2.txt
       - name: Push into git
         if: failure() || success()
-        id: push
         run: |
           git config --global --add safe.directory '.'
           git config --global user.name 'DefalDonut'
           git config --global user.email 'tsaily24@students.oamk.fi'
-          git add test1.txt testi2.txt
+          git add .
           git commit -m "File created" || true
           git push
       - name: Failure
