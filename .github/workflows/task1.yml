@@ -1,5 +1,7 @@
 name: Tehtävä 1
 on: workflow_dispatch
+permissions:
+  contents: write
 jobs:
   container-job:
     runs-on: ubuntu-latest
@@ -9,18 +11,18 @@ jobs:
         id: first
         run: |
           npm ci
-          npm test -- test1 >> test1.txt || true
+          npm test -- test1 > testi1.txt || true
       - name: Second step
         id: second
-        run: |
-          npm test -- test2 >> testi2.txt
+        run: npm test -- test2 > testi2.txt
       - name: Push into git
+        if: failure() || success()
         id: push
         run: |
           git config --global user.name 'DefalDonut'
           git config --global user.email 'tsaily24@students.oamk.fi'
           git add .
-          git commit -m "File created"
+          git commit -m "File created" || true
           git push
       - name: tests failed
         continue-on-error: true
